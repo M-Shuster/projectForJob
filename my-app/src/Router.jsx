@@ -13,6 +13,7 @@ export const Router = () => {
         <Route path="/dead-end" element={<DeadEnd />} />
         <Route path="/cryptocurrencies" element={<CryptoHomepage />} />
         <Route path="/single-crypto/:id" element={<NewPage />} />
+        <Route path="/comparisons" element={<NewPage />} />
       </Routes>
     </BrowserRouter>
   );
