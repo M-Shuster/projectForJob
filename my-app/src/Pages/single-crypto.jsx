@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { cryptoContainer } from "../Components/single-crypto-styled";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 
 const fetchSingleCryptoData = async (inputId) => {
   const url = process.env.REACT_APP_BASE_URL;
@@ -24,18 +27,31 @@ export const NewPage = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Cryptocurrency: {id} </h2>
-      {cryptoData?.data &&
-        Object.keys(cryptoData?.data)
-          .filter((x) => x !== "explorer")
-          .filter((x) => x !== "id")
-          .filter((x) => x !== "rank")
-          .map((key) => (
-            <p>
-              {key}: {cryptoData?.data[key]}
-            </p>
-          ))}
+    <div className="cryptoDivContainer">
+      <div className="singleCryptoDiv">
+        <h2>Cryptocurrency: {id} </h2>
+        {cryptoData?.data &&
+          Object.keys(cryptoData?.data)
+            .filter((x) => x !== "explorer")
+            .filter((x) => x !== "id")
+            .filter((x) => x !== "rank")
+            .filter((x) => x !== "name")
+            .map((key) => (
+              <p>
+                {key}: {cryptoData?.data[key]}
+              </p>
+            ))}
+
+        <br />
+        <Link to="/cryptocurrencies">
+          <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+          Back
+        </Link>
+      </div>
+      <div className="compareCryptoDiv">
+        <Link to="/comparisons">Compare with another Cryptocurrency?</Link>
+      </div>
+      <br />
     </div>
   );
 };
