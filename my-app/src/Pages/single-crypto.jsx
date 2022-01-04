@@ -1,16 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { cryptoContainer } from "../Components/single-crypto-styled";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
+import CryptoDropdown from "../Components/dropdownMenu";
 
 const fetchSingleCryptoData = async (inputId) => {
   const url = process.env.REACT_APP_BASE_URL;
   return fetch(`${url}/assets/${inputId}`).then((response) => response.json());
 };
-
-/////////////////
 
 export const NewPage = () => {
   const [cryptoData, setCryptoData] = React.useState();
@@ -49,7 +47,8 @@ export const NewPage = () => {
         </Link>
       </div>
       <div className="compareCryptoDiv">
-        <Link to="/comparisons">Compare with another Cryptocurrency?</Link>
+        <Link to={"/comparisons"}>Compare with another Cryptocurrency?</Link>
+        <br />
       </div>
       <br />
     </div>

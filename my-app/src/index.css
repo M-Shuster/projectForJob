@@ -30,5 +30,40 @@ code {
   padding: 10px;
   background-color: goldenrod;
   border-radius: 10px;
+  text-align: center;
   margin: auto;
+}
+
+.allCryptocurrenciesDivContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.allCryptocurrenciesDiv {
+  grid-template-columns: fit-content(90%);
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: goldenrod;
+  border-radius: 10px;
+}
+
+.CryptoMainpageDiv {
+  margin: 10px;
+}
+
+.CryptoMainpageDiv a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.CryptoMainpageDiv a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }

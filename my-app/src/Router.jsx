@@ -4,6 +4,7 @@ import { Home } from "./Pages/Home";
 import CryptoHomepage from "./Pages/crypto-homepage";
 import DeadEnd from "./Pages/dead-end";
 import { NewPage } from "./Pages/single-crypto";
+import CryptoDropdown from "./Components/dropdownMenu";
 
 export const Router = () => {
   return (
@@ -13,7 +14,7 @@ export const Router = () => {
         <Route path="/dead-end" element={<DeadEnd />} />
         <Route path="/cryptocurrencies" element={<CryptoHomepage />} />
         <Route path="/single-crypto/:id" element={<NewPage />} />
-        <Route path="/comparisons" element={<NewPage />} />
+        <Route path="/comparisons" element={<CryptoDropdown />} />
       </Routes>
     </BrowserRouter>
   );
