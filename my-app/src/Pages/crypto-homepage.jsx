@@ -24,7 +24,7 @@ export default function CryptoHomepage() {
   }, [cryptoData]);
 
   return (
-    <div>
+    <div className="CryptoMainpageDiv">
       <h1>
         Welcome to the Cryptocurrency <StyledLink to="/">home</StyledLink>page{" "}
         <source />!
@@ -33,9 +33,15 @@ export default function CryptoHomepage() {
         Please click on a cryptocurrency that you would like to see more
         information on
       </p>
-      {cryptoData?.data?.map((crypto) => {
-        return <CryptoComponent crypto={crypto} />;
-      })}
+      <div className="allCryptocurrenciesDivContainer">
+        {cryptoData?.data?.map((crypto) => {
+          return (
+            <div className="allCryptocurrenciesDiv">
+              <CryptoComponent crypto={crypto} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
